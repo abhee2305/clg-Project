@@ -1,4 +1,4 @@
-# SecureTest — Online AI Proctoring System
+# Procto AI — Online AI Proctoring System
 
 **🟢 LIVE CHAT APP:** https://securetest-backend-production.up.railway.app/
 
