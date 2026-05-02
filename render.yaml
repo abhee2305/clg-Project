@@ -1,0 +1,43 @@
+services:
+  # ─────────────────────────────────────────────────
+  #  Spring Boot Backend (Web Service)
+  # ─────────────────────────────────────────────────
+  - type: web
+    name: securetest-backend
+    runtime: java
+    plan: free                        # Free tier on Render
+    region: oregon
+
+    # Build command — Maven packages the app into a JAR
+    buildCommand: mvn clean package -DskipTests
+
+    # Start command — runs the packaged JAR
+    startCommand: java -jar target/securetest-1.0.0.jar
+
+    # Health check — Render pings this to confirm app is running
+    healthCheckPath: /api/auth/test
+
+    # ─────────────────────────────────────────────────
+    #  Environment Variables
+    #  Set SECRET values on Render Dashboard, not here!
+    # ─────────────────────────────────────────────────
+    envVars:
+      - key: JAVA_VERSION
+        value: "17"
+
+      # MongoDB Atlas URI — OVERRIDE THIS on Render Dashboard
+      # Never commit your real Atlas URI to GitHub!
+      - key: MONGODB_URI
+        sync: false   # means: set manually on Render dashboard
+
+      # JWT Secret — set a strong random string on Render dashboard
+      - key: JWT_SECRET
+        sync: false
+
+      # CORS — set to your deployed frontend URL
+      # e.g. https://securetest-frontend.onrender.com  OR  *  for testing
+      - key: CORS_ORIGIN
+        value: "*"
+
+      - key: JWT_EXPIRATION
+        value: "86400000"

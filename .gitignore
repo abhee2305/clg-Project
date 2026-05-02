@@ -1,0 +1,45 @@
+# ========================
+#  Maven
+# ========================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ========================
+#  IDE Files
+# ========================
+.idea/
+*.iws
+*.iml
+*.ipr
+.vs/
+.vscode/
+
+# ========================
+#  OS Files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+#  Environment / Secrets
+# ========================
+# NEVER commit real secrets!
+*.env
+.env
+application-prod.properties
+
+# ========================
+#  Logs
+# ========================
+*.log
+logs/
+
+# ========================
+#  Compiled / Packaged
+# ========================
+*.class
+*.jar
+*.war
+*.ear
