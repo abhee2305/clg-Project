@@ -1,4 +1,9 @@
 # SecureTest — Online AI Proctoring System
+
+**🟢 LIVE CHAT APP:** https://securetest-backend-production.up.railway.app/
+
+---
+
 ### Backend · Java 17 · Spring Boot 3 · MongoDB · JWT
 
 A full-stack **Automated Exam Proctoring System** built with Spring Boot.
